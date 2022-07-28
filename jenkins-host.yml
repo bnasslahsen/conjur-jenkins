@@ -1,0 +1,10 @@
+- !policy
+  id: ci/jenkins
+  annotations:
+    jenkins: true
+  body:
+    # Create host/ci/jenkins/controller host identity
+    - !host
+      id: controller
+      annotations:
+        description: Global host identity for Jenkins Controller

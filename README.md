@@ -1,11 +1,17 @@
 # Demo project for Conjur integration with Jenkins
 
+## Pre-requisites
+- OS Linux / MacOS
+- podman
+- conjur-cli
+- 
 ## Jenkins Setup
 ```shell
-cd setup/k8s
+./load-jenkins-policies.sh
 ```
 
-## P
+## To debug
 ```shell
-cd setup/k8s
+docker logs --since=2m dap | grep "Authentication Error"
 ```
+![img.png](img.png)

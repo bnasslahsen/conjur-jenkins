@@ -1,0 +1,9 @@
+- !policy
+  id: ci
+  annotations:
+    description: All continuous improvement tooling policies
+
+- !policy
+  id: projects
+  annotations:
+    description: All project-based policies for COTS and in-house applications
