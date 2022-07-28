@@ -4,7 +4,6 @@
 - OS Linux / MacOS
 - podman
 - conjur-cli
-- 
 ## Jenkins Setup
 ```shell
 ./load-jenkins-policies.sh
