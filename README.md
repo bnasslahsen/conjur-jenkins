@@ -6,7 +6,7 @@
 - conjur-cli
 ## Jenkins Setup
 ```shell
-./load-jenkins-policies.sh
+./load-policies.sh
 ```
 
 ## To debug
