@@ -19,11 +19,8 @@ else
 fi
 
 conjur policy update -b root -f root.yml
-conjur policy update -b root -f groups.yml
 conjur policy update -b root -f jenkins-host.yml
 conjur policy update -b root -f projects.yml
-
-conjur policy update -b root -f dev-team-1.yml
 
 conjur policy update -b root -f jenkins-secrets.yml
 conjur policy update -b root -f grants.yml

@@ -6,19 +6,13 @@
   body:
     # Create the conjur/authn-jwt/jenkins web service
     - !webservice
-
-      # Optional: Uncomment any or all of the following variables:
-      # * token-app-propery
-      # * identity-path
-      # * issuer
-      # identity-path is always used together with token-app-property
-      # however, token-app-property can be used without identity-path
-
     - !variable
       id: token-app-property
       annotations:
         description: JWT Authenticator bases authentication on claims from the JWT. You can base authentication on identifying clams such as the name, the user, and so on. If you can customize the JWT, you can create a custom claim and base authentication on this claim.
 
+      # identity-path is always used together with token-app-property
+      # however, token-app-property can be used without identity-path
     - !variable
       id: identity-path
       annotations:
