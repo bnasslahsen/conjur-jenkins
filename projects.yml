@@ -27,38 +27,38 @@
         authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Test-Global-Secret-Retrieval
 
     - !host
-      id: Test-Secret-Retrieval-1
-      annotations:
-        description: Pipeline project
-        jenkins: true
-        # authn-jwt/jenkins/jenkins_parent_name: Dev-Team-1
-        authn-jwt/jenkins/jenkins_pronoun: Pipeline
-        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Test-Secret-Retrieval-1
-
-    - !host
-      id: Dev-team-1
+      id: Team-1
       annotations:
         description: Folder project
         jenkins: true
-        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Dev-team-1
+        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Team-1
+
+    - !host
+      id: Project-1
+      annotations:
+        description: Pipeline project
+        jenkins: true
+        # authn-jwt/jenkins/jenkins_parent_name: Team-1
+        authn-jwt/jenkins/jenkins_pronoun: Pipeline
+        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Project-1
 
     # Grant all hosts in collection above to be members of projects group
     - !grant
       role: !group
       members:
         - !host Test-Global-Secret-Retrieval
-        - !host Test-Secret-Retrieval-1
-        - !host Dev-team-1
+        - !host Team-1
+        - !host Project-1
 
-    # Create a group for dev-team-1 project hosts
+    # Create a group for team-1 project hosts
     - !group
-      id: dev-team-1
+      id: team-1
       annotations:
         description: group for dev-team1
         editable: "true"
 
-    # Add dev-team-1 projects to dev-team-1 group
+    # Add team-1 projects to dev-team-1 group
     - !grant
-      role: !group dev-team-1
+      role: !group team-1
       members:
-        - !host Test-Secret-Retrieval-1
+        - !host Team-1

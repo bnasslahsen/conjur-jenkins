@@ -1,9 +1,9 @@
 - !permit
-  role: !host ci/jenkins/projects/Dev-team-1
+  role: !host ci/jenkins/projects/Team-1
   privileges: [read, execute]
   resources: [!variable ci/jenkins/secrets/team1_pass]
 - !permit
-  role: !host ci/jenkins/projects/Test-Secret-Retrieval-1
+  role: !host ci/jenkins/projects/Project-1
   privileges: [read, execute]
   resources: [!variable ci/jenkins/secrets/github_username]
 - !permit

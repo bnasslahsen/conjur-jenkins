@@ -23,9 +23,9 @@ conjur policy update -b root -f jenkins-host.yml
 conjur policy update -b root -f projects.yml
 
 conjur policy update -b root -f jenkins-secrets.yml
-conjur policy update -b root -f grants.yml
-conjur policy update -b root -f grants_authn.yml
 
+conjur policy update -b root -f grants.yml
+conjur policy update  -b root -f grants_authn.yml
 
 conjur variable set -i ci/jenkins/secrets/github_username -v "$GIT_USER"
 conjur variable set -i ci/jenkins/secrets/github_password -v "$GIT_PASS"
