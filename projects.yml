@@ -18,13 +18,13 @@
 
     # Create host/ci/jenkins/cybr-cli host identity
     - !host
-      id: Test-Global-Secret-Retrieval
+      id: Global-Project
       annotations:
-        description: Freestyle project in Jenkins named Test-Global-Secret-Retrieval.
+        description: Freestyle project in Jenkins named Global-Project.
         jenkins: true
         project_url: na
         authn-jwt/jenkins/jenkins_pronoun: Project
-        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Test-Global-Secret-Retrieval
+        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Global-Project
 
     - !host
       id: Team-1
@@ -53,7 +53,7 @@
     - !grant
       role: !group
       members:
-        - !host Test-Global-Secret-Retrieval
+        - !host Global-Project
         - !host Team-1
         - !host Project-1
         - !host Conjur-Demo
