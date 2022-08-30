@@ -38,9 +38,16 @@
       annotations:
         description: Pipeline project
         jenkins: true
-        # authn-jwt/jenkins/jenkins_parent_name: Team-1
         authn-jwt/jenkins/jenkins_pronoun: Pipeline
         authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Project-1
+
+    - !host
+      id: Conjur-Demo
+      annotations:
+        description: Pipeline project
+        jenkins: true
+        authn-jwt/jenkins/jenkins_pronoun: Pipeline
+        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Conjur-Demo
 
     # Grant all hosts in collection above to be members of projects group
     - !grant
@@ -49,6 +56,7 @@
         - !host Test-Global-Secret-Retrieval
         - !host Team-1
         - !host Project-1
+        - !host Conjur-Demo
 
     # Create a group for team-1 project hosts
     - !group

@@ -1,7 +1,4 @@
 ### conjur policy update -b root -f delete-host.yml
 - !delete
-  record: !host ci/jenkins/projects/Team-1
-- !delete
-  record: !host ci/jenkins/projects/Dev-team-1
-- !delete
-  record: !host ci/jenkins/projects/Test-Secret-Retrieval-1
+  record: !group ci/jenkins/projects/dev-team-1
+

@@ -23,16 +23,22 @@ conjur policy update -b root -f jenkins-host.yml
 conjur policy update -b root -f projects.yml
 
 conjur policy update -b root -f jenkins-secrets.yml
-
-conjur policy update -b root -f grants.yml
 conjur policy update  -b root -f grants_authn.yml
-
-conjur variable set -i ci/jenkins/secrets/github_username -v "$GIT_USER"
-conjur variable set -i ci/jenkins/secrets/github_password -v "$GIT_PASS"
-conjur variable set -i ci/jenkins/secrets/team1_pass -v "$TEAM1_PASS"
 
 conjur variable set -i conjur/authn-jwt/jenkins/audience -v "$JENKINS_AUDIENCE"
 conjur variable set -i conjur/authn-jwt/jenkins/identity-path -v "$JENKINS_IDENTITY"
 conjur variable set -i conjur/authn-jwt/jenkins/issuer -v "$JENKINS_ISSUER"
 conjur variable set -i conjur/authn-jwt/jenkins/jwks-uri -v "$JENKINS_JWKS"
 conjur variable set -i conjur/authn-jwt/jenkins/token-app-property -v "$JENKINS_TOKEN_APP"
+
+conjur variable set -i ci/jenkins/secrets/github_username -v "$GIT_USER"
+conjur variable set -i ci/jenkins/secrets/github_password -v "$GIT_PASS"
+conjur variable set -i ci/jenkins/secrets/team1_pass -v "$TEAM1_PASS"
+
+conjur variable set -i ci/jenkins/secrets/sonar_hostname -v "$SONAR_HOSTNAME"
+conjur variable set -i ci/jenkins/secrets/sonar_organisation -v "$SONAR_ORGANISATION"
+conjur variable set -i ci/jenkins/secrets/sonar_token -v "$SONAR_TOKEN"
+
+conjur variable set -i ci/jenkins/secrets/nexus_hostname -v "$NEXUS_HOSTNAME"
+conjur variable set -i ci/jenkins/secrets/nexus_username -v "$NEXUS_USERNAME"
+conjur variable set -i ci/jenkins/secrets/nexus_token -v "$NEXUS_TOKEN"
