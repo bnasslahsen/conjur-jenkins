@@ -8,7 +8,7 @@ set +a
 conjur policy update -f authn-jwt-jenkins.yml -b root
 #podman exec dap evoke variable set CONJUR_AUTHENTICATORS authn,authn-k8s/dev-cluster,authn-k8s/ocp-cluster,authn-jwt/jenkins
 
-#Verify that the Kubernetes Authenticator is configured and allowlisted
+#Verify that the Jenkins Authenticator is configured and allowlisted
 RESULT=$(curl -sSk https://"$CONJUR_MASTER_HOSTNAME":"$CONJUR_MASTER_PORT"/info  | grep "$CONJUR_AUTHENTICATOR_ID" | wc -w)
 
 if [[ $RESULT -ne 2 ]]; then
