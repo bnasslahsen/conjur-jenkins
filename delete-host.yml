@@ -1,4 +1,4 @@
 ### conjur policy update -b root -f delete-host.yml
 - !delete
-  record: !variable ci/jenkins/secrets/github_ssh_pub_key
+  record: !host ci/jenkins/projects/Global-Project
 

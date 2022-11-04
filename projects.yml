@@ -27,6 +27,15 @@
         authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Global-Project
 
     - !host
+      id: Ansible-Demo
+      annotations:
+        description: Freestyle project in Jenkins named Global-Project.
+        jenkins: true
+        project_url: na
+        authn-jwt/jenkins/jenkins_pronoun: Project
+        authn-jwt/jenkins/identity: 266e991928f8c7cf155bd54d43d12174-Ansible-Demo
+
+    - !host
       id: Team-1
       annotations:
         description: Folder project
@@ -57,6 +66,7 @@
         - !host Team-1
         - !host Project-1
         - !host Conjur-Demo
+        - !host Ansible-Demo
 
     # Create a group for team-1 project hosts
     - !group
